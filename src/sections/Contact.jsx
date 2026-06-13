@@ -145,7 +145,7 @@ export const Contact = () => {
         />
       </div>
 
-      <div className="relative z-10 container mx-auto px-6">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6">
         {/* HEADER */}
         <div className="mx-auto mb-16 max-w-3xl text-center">
           <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase">
@@ -171,7 +171,7 @@ export const Contact = () => {
         {/* MAIN GRID */}
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2">
           {/* ================= FORM ================= */}
-          <div className="rounded-[2.2rem] border border-[#8b3a3a]/8 bg-[#f7f2ed]/92 p-8 shadow-[0_10px_35px_rgba(0,0,0,0.05)] backdrop-blur-xl">
+          <div className="rounded-[2.2rem] border border-[#8b3a3a]/8 bg-[#f7f2ed]/92 p-5 shadow-[0_10px_35px_rgba(0,0,0,0.05)] backdrop-blur-xl sm:p-6 md:p-8">
             <form
               className="space-y-5"
               onSubmit={handleSubmit}
@@ -295,7 +295,7 @@ export const Contact = () => {
           {/* ================= RIGHT SIDE ================= */}
           <div className="space-y-6">
             {/* CONTACT INFO */}
-            <div className="rounded-[2.2rem] border border-[#8b3a3a]/8 bg-[#f7f2ed]/92 p-8 shadow-[0_10px_35px_rgba(0,0,0,0.05)] backdrop-blur-xl">
+            <div className="rounded-[2.2rem] border border-[#8b3a3a]/8 bg-[#f7f2ed]/92 p-5 shadow-[0_10px_35px_rgba(0,0,0,0.05)] backdrop-blur-xl sm:p-6 md:p-8">
               <h3 className="mb-6 text-2xl font-semibold">
                 Contact Information
               </h3>
@@ -317,7 +317,7 @@ export const Contact = () => {
                           {item.label}
                         </div>
 
-                        <div className="font-medium text-slate-800">
+                        <div className="font-medium wrap-break-word text-slate-800">
                           {item.value}
                         </div>
                       </div>
@@ -336,7 +336,7 @@ export const Contact = () => {
                           {item.label}
                         </div>
 
-                        <div className="font-medium text-slate-800">
+                        <div className="font-medium wrap-break-word text-slate-800">
                           {item.value}
                         </div>
                       </div>
@@ -347,7 +347,7 @@ export const Contact = () => {
             </div>
 
             {/* AVAILABILITY */}
-            <div className="rounded-4xl bg-[#8b3a3a] p-8 text-white shadow-[0_10px_35px_rgba(139,58,58,0.25)]">
+            <div className="rounded-4xl bg-[#8b3a3a] p-5 text-white shadow-[0_10px_35px_rgba(139,58,58,0.25)] sm:p-6 md:p-8">
               <div className="mb-4 flex items-center gap-3">
                 <span className="h-3 w-3 animate-pulse rounded-full bg-green-400" />
 
