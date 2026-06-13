@@ -1,0 +1,387 @@
+@import "tailwindcss";
+
+@theme {
+  /* ==========================
+     WARM PREMIUM THEME
+     (AI + Research + Artistic)
+  ========================== */
+
+  --color-background: #f7f3ee;
+  --color-foreground: #1a1c24;
+
+  --color-card: #ffffff;
+
+  /* Primary Brand Color
+     Matches your shirt */
+  --color-primary: #8b3a3a;
+  --color-primary-foreground: #ffffff;
+
+  /* Secondary */
+  --color-secondary: #ece5dc;
+  --color-secondary-foreground: #8b3a3a;
+
+  /* Muted */
+  --color-muted: #f5efe8;
+  --color-muted-foreground: #6b7280;
+
+  /* Borders */
+  --color-border: rgba(60, 42, 35, 0.08);
+
+  /* Radius */
+  --radius: 0.75rem;
+
+  /* Accent Highlight */
+  --color-highlight: #c9a66b;
+
+  /* Glass Surface */
+  --color-surface: rgba(255, 255, 255, 0.58);
+
+  /* ==========================
+     SHADOWS
+  ========================== */
+
+  --shadow-soft: 0 12px 35px rgba(60, 42, 35, 0.06);
+
+  --shadow-card: 0 20px 60px rgba(60, 42, 35, 0.08);
+
+  --shadow-button: 0 14px 34px rgba(139, 58, 58, 0.18);
+}
+
+/* ==========================
+   BASE
+========================== */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  body {
+    background: linear-gradient(
+      135deg,
+      #faf6f1 0%,
+      #f3ede5 100%
+    );
+
+    color: var(--color-foreground);
+
+    font-family: "Inter", sans-serif;
+
+    overflow-x: hidden;
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .font-serif {
+    font-family: "Playfair Display", serif;
+  }
+
+  img {
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  ::selection {
+    background: rgba(139, 58, 58, 0.16);
+
+    color: #1a1c24;
+  }
+
+  * {
+    border-color: var(--color-border);
+  }
+}
+
+/* ==========================
+   COMPONENTS
+========================== */
+
+/* ==========================
+   SHAPE GRID
+========================== */
+
+.shapegrid-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: none;
+  pointer-events: auto;
+}
+
+@layer components {
+  /* ==========================
+     GLASS
+  ========================== */
+
+  .glass {
+    background: rgba(255, 255, 255, 0.58);
+
+    backdrop-filter: blur(18px);
+
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 255, 255, 0.72);
+
+    box-shadow: var(--shadow-soft);
+  }
+
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.74);
+
+    backdrop-filter: blur(28px);
+
+    -webkit-backdrop-filter: blur(28px);
+
+    border: 1px solid rgba(255, 255, 255, 0.82);
+
+    box-shadow: var(--shadow-card);
+  }
+
+  /* ==========================
+     GLOW EFFECTS
+  ========================== */
+
+  .glow-text {
+    text-shadow: 0 0 32px rgba(139, 58, 58, 0.18);
+  }
+
+  .glow-border {
+    box-shadow:
+      0 0 22px rgba(139, 58, 58, 0.1),
+      inset 0 0 14px rgba(139, 58, 58, 0.04);
+  }
+
+  /* Premium card */
+  .premium-card {
+    background: rgba(255, 255, 255, 0.62);
+
+    backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 255, 255, 0.55);
+
+    box-shadow: var(--shadow-card);
+  }
+}
+
+/* ==========================
+   UTILITIES
+========================== */
+
+@layer utilities {
+  /* ==========================
+     ANIMATIONS
+  ========================== */
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+
+      filter: blur(10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+
+      filter: blur(0);
+    }
+  }
+
+  @keyframes slow-drift {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+
+    25% {
+      transform: translate(20px, -30px);
+    }
+
+    50% {
+      transform: translate(-15px, -20px);
+    }
+
+    75% {
+      transform: translate(30px, 10px);
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* ==========================
+     ANIMATION CLASSES
+  ========================== */
+
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out both;
+  }
+
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+
+  /* ==========================
+     DELAYS
+  ========================== */
+
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+
+  .animation-delay-800 {
+    animation-delay: 800ms;
+  }
+
+  /* ==========================
+     ANIMATED BORDER
+  ========================== */
+
+  @keyframes animated-border {
+    0% {
+      stroke-dashoffset: 400;
+    }
+
+    100% {
+      stroke-dashoffset: -550;
+    }
+  }
+
+  .group:hover .animated-border-path {
+    animation: animated-border 1.5s linear infinite;
+  }
+
+  .animated-border:hover {
+    background: rgba(139, 58, 58, 0.06);
+
+    backdrop-filter: blur(16px);
+
+    box-shadow: 0 0 18px rgba(139, 58, 58, 0.1);
+  }
+
+  /* ==========================
+     TIMELINE GLOW
+  ========================== */
+
+  .timeline-glow {
+    box-shadow:
+      0 0 40px rgba(139, 58, 58, 0.14),
+      0 0 80px rgba(139, 58, 58, 0.06);
+  }
+
+  /* ==========================
+     WATERCOLOR OVERLAY
+  ========================== */
+
+  .watercolor-overlay {
+    position: absolute;
+    inset: 0;
+
+    opacity: 0.08;
+
+    mix-blend-mode: multiply;
+
+    pointer-events: none;
+  }
+
+  /* ==========================
+     PREMIUM SCROLLBAR
+  ========================== */
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(245, 239, 232, 0.8);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(139, 58, 58, 0.22);
+
+    border-radius: 999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(139, 58, 58, 0.35);
+  }
+}
+
+@keyframes slowDrift {
+  0% {
+    transform: translate(0px, 0px);
+    opacity: 0.18;
+  }
+
+  25% {
+    transform: translate(18px, -28px);
+    opacity: 0.4;
+  }
+
+  50% {
+    transform: translate(-12px, -45px);
+    opacity: 0.25;
+  }
+
+  75% {
+    transform: translate(25px, -18px);
+    opacity: 0.38;
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+    opacity: 0.18;
+  }
+}
+
+.animate-slow-drift {
+  animation: slowDrift ease-in-out infinite;
+}
