@@ -295,7 +295,7 @@ export const Contact = () => {
           {/* ================= RIGHT SIDE ================= */}
           <div className="space-y-6">
             {/* CONTACT INFO */}
-            <div className="rounded-[2.2rem] border border-[#8b3a3a]/8 bg-[#f7f2ed]/92 p-5 shadow-[0_10px_35px_rgba(0,0,0,0.05)] backdrop-blur-xl sm:p-6 md:p-8">
+            <div className="rounded-[2.2rem] border border-[#8b3a3a]/8 bg-[#f7f2ed]/92 p-3 shadow-[0_10px_35px_rgba(0,0,0,0.05)] backdrop-blur-xl sm:p-6 md:p-8">
               <h3 className="mb-6 text-2xl font-semibold">
                 Contact Information
               </h3>
@@ -306,7 +306,7 @@ export const Contact = () => {
                     <a
                       key={i}
                       href={item.href}
-                      className="group flex items-center gap-4 rounded-2xl p-4 transition-all duration-300 hover:bg-white/50"
+                      className="group flex items-center gap-4 rounded-2xl p-2 transition-all duration-300 hover:bg-white/50"
                     >
                       <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#8b3a3a]/10 transition-all duration-300 group-hover:scale-105">
                         <item.icon className="h-5 w-5 text-[#8b3a3a]" />
@@ -356,7 +356,7 @@ export const Contact = () => {
                 </span>
               </div>
 
-              <p className="leading-8 text-white/85">
+              <p className="leading-7 text-pretty text-white/85">
                 Open to AI/ML engineering, research,
                 intelligent systems, full stack development,
                 internships, and impactful collaborations.
