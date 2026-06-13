@@ -295,7 +295,7 @@ export const Contact = () => {
           {/* ================= RIGHT SIDE ================= */}
           <div className="space-y-6">
             {/* CONTACT INFO */}
-            <div className="rounded-[2.2rem] border border-[#8b3a3a]/8 bg-[#f7f2ed]/92 p-1 shadow-[0_10px_35px_rgba(0,0,0,0.05)] backdrop-blur-xl sm:p-6 md:p-8">
+            <div className="rounded-[2.2rem] border border-[#8b3a3a]/8 bg-[#f7f2ed]/92 p-5 shadow-[0_10px_35px_rgba(0,0,0,0.05)] backdrop-blur-xl sm:p-6 md:p-8">
               <h3 className="mb-6 text-2xl font-semibold">
                 Contact Information
               </h3>
