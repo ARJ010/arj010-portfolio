@@ -121,12 +121,12 @@ export const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden py-32"
+      className="relative overflow-x-hidden py-32"
     >
       {/* BG GLOW */}
       <div className="pointer-events-none absolute top-0 left-0 h-full w-full">
         <div
-          className="absolute top-1/4 left-1/4 h-[500px] w-[500px] rounded-full opacity-30 blur-[110px]"
+          className="absolute top-1/4 left-1/4 h-[260px] w-[260px] rounded-full opacity-30 blur-[110px] sm:h-[400px] sm:w-[400px] lg:h-[500px] lg:w-[500px]"
           style={{
             background:
               "radial-gradient(circle, rgba(139,58,58,0.12), transparent 72%)",
@@ -169,9 +169,9 @@ export const Contact = () => {
         </div>
 
         {/* MAIN GRID */}
-        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2">
+        <div className="mx-auto grid w-full max-w-6xl min-w-0 gap-8 px-1 lg:grid-cols-2">
           {/* ================= FORM ================= */}
-          <div className="rounded-[2.2rem] border border-[#8b3a3a]/8 bg-[#f7f2ed]/92 p-5 shadow-[0_10px_35px_rgba(0,0,0,0.05)] backdrop-blur-xl sm:p-6 md:p-8">
+          <div className="w-full min-w-0 rounded-[2.2rem] border border-[#8b3a3a]/8 bg-[#f7f2ed]/92 p-4 shadow-[0_10px_35px_rgba(0,0,0,0.05)] backdrop-blur-xl sm:p-3 md:p-8">
             <form
               className="space-y-5"
               onSubmit={handleSubmit}
@@ -198,7 +198,7 @@ export const Contact = () => {
                       name: e.target.value,
                     })
                   }
-                  className="w-full rounded-2xl border border-black/5 bg-white/70 px-5 py-4 transition-all duration-300 outline-none hover:border-[#8b3a3a]/10 focus:border-[#8b3a3a]/20 focus:ring-4 focus:ring-[#8b3a3a]/10"
+                  className="box-border w-full min-w-0 rounded-2xl border border-black/5 bg-white/70 px-5 py-4 transition-all duration-300 outline-none hover:border-[#8b3a3a]/10 focus:border-[#8b3a3a]/20 focus:ring-4 focus:ring-[#8b3a3a]/10"
                 />
               </div>
               {/* EMAIL */}
@@ -223,7 +223,7 @@ export const Contact = () => {
                       email: e.target.value,
                     })
                   }
-                  className="w-full rounded-2xl border border-black/5 bg-white/70 px-5 py-4 transition-all duration-300 outline-none focus:border-[#8b3a3a]/20 focus:ring-4 focus:ring-[#8b3a3a]/10"
+                  className="box-border w-full min-w-0 rounded-2xl border border-black/5 bg-white/70 px-5 py-4 transition-all duration-300 outline-none focus:border-[#8b3a3a]/20 focus:ring-4 focus:ring-[#8b3a3a]/10"
                 />
               </div>
 
@@ -295,7 +295,7 @@ export const Contact = () => {
           {/* ================= RIGHT SIDE ================= */}
           <div className="space-y-6">
             {/* CONTACT INFO */}
-            <div className="rounded-[2.2rem] border border-[#8b3a3a]/8 bg-[#f7f2ed]/92 p-5 shadow-[0_10px_35px_rgba(0,0,0,0.05)] backdrop-blur-xl sm:p-6 md:p-8">
+            <div className="rounded-[2.2rem] border border-[#8b3a3a]/8 bg-[#f7f2ed]/92 p-2 shadow-[0_10px_35px_rgba(0,0,0,0.05)] backdrop-blur-xl sm:p-6 md:p-8">
               <h3 className="mb-6 text-2xl font-semibold">
                 Contact Information
               </h3>
@@ -347,7 +347,7 @@ export const Contact = () => {
             </div>
 
             {/* AVAILABILITY */}
-            <div className="rounded-4xl bg-[#8b3a3a] p-5 text-white shadow-[0_10px_35px_rgba(139,58,58,0.25)] sm:p-6 md:p-8">
+            <div className="rounded-4xl bg-[#8b3a3a] p-3 text-white shadow-[0_10px_35px_rgba(139,58,58,0.25)] md:p-5">
               <div className="mb-4 flex items-center gap-3">
                 <span className="h-3 w-3 animate-pulse rounded-full bg-green-400" />
 
