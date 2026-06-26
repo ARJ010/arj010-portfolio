@@ -63,7 +63,7 @@ export const About = () => {
             <div className="text-muted-foreground animate-fade-in animation-delay-200 max-w-[680px] space-y-5 text-[1.02rem] leading-8">
               <p>
                 I’m an Integrated M.Sc. Computer Science
-                (AI/ML) graduate candidate and UGC-NET
+                (AI/ML) graduate and UGC-NET
                 qualified researcher focused on building
                 intelligent, scalable, and real world AI
                 systems.

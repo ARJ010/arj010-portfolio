@@ -1,10 +1,13 @@
+import { useState } from "react";
 import {
   GraduationCap,
   Brain,
   Microscope,
   Trophy,
   Briefcase,
+  ArrowUpRight,
 } from "lucide-react";
+import { MarklistModal } from "@/components/MarklistModal";
 
 const experiences = [
   {
@@ -15,9 +18,16 @@ const experiences = [
       "Nehru Arts & Science College / Kannur University",
 
     description:
-      "Specialized in Artificial Intelligence and Machine Learning with focus on intelligent systems, deep learning, biosignal processing, and research driven implementation.",
+      "Graduated with First Class with Distinction (8.803 OGPA / 88.03%), securing a 9.004 OGPA (A+) in Core Computer Science. Specialized in Artificial Intelligence, Machine Learning, biosignal processing, and research-driven implementation.",
 
-    technologies: ["AI/ML", "Machine Learning", "Research"],
+    technologies: [
+      "First Class with Distinction",
+      "8.803 OGPA",
+      "AI/ML",
+      "Research",
+    ],
+
+    link: "/Result/abhinav_raj_Consolidated_marklist.pdf",
 
     icon: GraduationCap,
     featured: false,
@@ -141,6 +151,7 @@ const experiences = [
 ];
 
 export const Journey = () => {
+  const [isMarklistOpen, setIsMarklistOpen] = useState(false);
   return (
     <section
       id="journey"
@@ -270,16 +281,29 @@ export const Journey = () => {
 
                       {/* TAGS */}
                       <div className="mt-6 flex flex-wrap gap-2.5">
-                        {exp.technologies.map(
-                          (tech, techIdx) => (
+                        {exp.technologies.map((tech, techIdx) => {
+                          if (tech === "8.803 OGPA" && exp.link) {
+                            return (
+                              <button
+                                key={techIdx}
+                                onClick={() => setIsMarklistOpen(true)}
+                                className="inline-flex items-center gap-1.5 rounded-full border border-[#8b3a3a]/20 bg-[#8b3a3a]/8 hover:bg-[#8b3a3a]/15 px-4 py-2 text-sm font-semibold text-[#8b3a3a] transition-all duration-300 hover:scale-105 cursor-pointer"
+                                title="Click to view consolidated marklist"
+                              >
+                                {tech}
+                                <ArrowUpRight className="h-3.5 w-3.5" />
+                              </button>
+                            );
+                          }
+                          return (
                             <span
                               key={techIdx}
                               className="rounded-full border border-black/5 bg-white/70 px-4 py-2 text-sm text-slate-700"
                             >
                               {tech}
                             </span>
-                          )
-                        )}
+                          );
+                        })}
                       </div>
                     </div>
                   </div>
@@ -289,6 +313,10 @@ export const Journey = () => {
           </div>
         </div>
       </div>
+      <MarklistModal
+        isOpen={isMarklistOpen}
+        onClose={() => setIsMarklistOpen(false)}
+      />
     </section>
   );
 };

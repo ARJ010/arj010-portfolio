@@ -90,7 +90,7 @@ export const Hero = () => {
 
               <p className="mt-6 max-w-[650px] text-[0.95rem] leading-7 text-slate-600 sm:text-[1rem] md:text-[1.05rem]">
                 Integrated M.Sc. Computer Science (AI/ML)
-                graduate candidate and UGC-NET qualified
+                First Class with Distinction graduate and UGC-NET qualified
                 researcher focused on building intelligent,
                 real-time AI systems and scalable
                 applications using TensorFlow, PyTorch,
