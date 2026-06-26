@@ -13,25 +13,25 @@ function App() {
   return (
     <div className="min-h-screen overflow-x-hidden">
       <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <ClickSpark
-          sparkColor="rgba(139,58,58,0.7)"
-          sparkSize={12}
-          sparkRadius={24}
-          sparkCount={10}
-          duration={500}
-          easing="ease-out"
-          extraScale={1.15}
-        >
+      <ClickSpark
+        sparkColor="rgba(139,58,58,0.7)"
+        sparkSize={12}
+        sparkRadius={24}
+        sparkCount={10}
+        duration={500}
+        easing="ease-out"
+        extraScale={1.15}
+      >
+        <main>
+          <Hero />
+          <About />
           <Projects />
-        </ClickSpark>
-        <Journey />
-        <Expertise />
-        <Certificates />
-        <Contact />
-      </main>
+          <Journey />
+          <Expertise />
+          <Certificates />
+          <Contact />
+        </main>
+      </ClickSpark>
       <Footer />
     </div>
   );

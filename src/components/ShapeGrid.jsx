@@ -43,9 +43,10 @@ const ShapeGrid = ({
     // ================= RESIZE =================
     const resizeCanvas = () => {
       const rect = canvas.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
 
-      canvas.width = rect.width;
-      canvas.height = rect.height;
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
     };
 
     resizeCanvas();
@@ -152,7 +153,15 @@ const ShapeGrid = ({
 
     // ================= DRAW GRID =================
     const drawGrid = () => {
+      const rect = canvas.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+
+      // Reset any previous transform before clearing
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Draw everything in CSS pixels
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
       const offsetX =
         ((gridOffset.current.x % squareSize) + squareSize) %
@@ -162,10 +171,10 @@ const ShapeGrid = ({
         ((gridOffset.current.y % squareSize) + squareSize) %
         squareSize;
 
-      const cols = Math.ceil(canvas.width / squareSize) + 1;
+      const cols = Math.ceil(rect.width / squareSize) + 1;
 
       const rows =
-        Math.ceil(canvas.height / squareSize) + 1;
+        Math.ceil(rect.height / squareSize) + 1;
 
       ctx.strokeStyle = borderColor;
 

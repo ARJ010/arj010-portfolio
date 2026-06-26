@@ -26,13 +26,17 @@ const ClickSpark = ({
     const resizeCanvas = () => {
       const { width, height } =
         parent.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+
+      const targetWidth = Math.floor(width * dpr);
+      const targetHeight = Math.floor(height * dpr);
 
       if (
-        canvas.width !== width ||
-        canvas.height !== height
+        canvas.width !== targetWidth ||
+        canvas.height !== targetHeight
       ) {
-        canvas.width = width;
-        canvas.height = height;
+        canvas.width = targetWidth;
+        canvas.height = targetHeight;
       }
     };
 
@@ -86,6 +90,10 @@ const ClickSpark = ({
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+      const dpr = window.devicePixelRatio || 1;
+      ctx.save();
+      ctx.scale(dpr, dpr);
+
       sparksRef.current = sparksRef.current.filter(
         (spark) => {
           const elapsed = timestamp - spark.startTime;
@@ -127,6 +135,8 @@ const ClickSpark = ({
           return true;
         }
       );
+
+      ctx.restore();
 
       animationId = requestAnimationFrame(draw);
     };
