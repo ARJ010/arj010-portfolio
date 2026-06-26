@@ -30,15 +30,19 @@ export const MarklistModal = ({ isOpen, onClose }) => {
       {/* ================= MODAL ================= */}
       <div
         onClick={(e) => e.stopPropagation()}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="marklist-modal-title"
         className="animate-in zoom-in-95 relative flex flex-col max-h-[92vh] w-full max-w-4xl overflow-hidden rounded-4xl border border-[#ffffff40] bg-[#f6f1eb]/96 shadow-[0_25px_60px_rgba(0,0,0,0.12)] backdrop-blur-xl duration-300"
       >
         {/* ================= CLOSE ================= */}
         <div className="flex items-center justify-between border-b border-black/5 bg-[#f6f1eb]/80 px-6 py-4 backdrop-blur-md">
-          <h2 className="text-xl font-bold text-slate-800">
+          <h2 id="marklist-modal-title" className="text-xl font-bold text-slate-800">
             Consolidated Marklist
           </h2>
           <button
             onClick={onClose}
+            aria-label="Close marklist modal"
             className="flex h-10 w-10 items-center justify-center rounded-full border border-black/5 bg-white/80 shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-md"
           >
             <X className="h-5 w-5 text-slate-700" />

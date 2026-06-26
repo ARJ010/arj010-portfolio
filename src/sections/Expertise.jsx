@@ -83,7 +83,7 @@ export const Expertise = () => {
   return (
     <section
       id="expertise"
-      className="relative overflow-hidden py-32"
+      className="relative overflow-hidden py-16 sm:py-24 lg:py-32"
     >
       {/* Background Glow */}
       <div
@@ -131,7 +131,7 @@ export const Expertise = () => {
                   item.featured
                     ? `border border-[#8b3a3a]/10 bg-[#f7f2ed]/95 shadow-[0_16px_45px_rgba(139,58,58,0.08)] md:scale-[1.015] hover:md:scale-[1.025] `
                     : `border border-white/40 bg-[#f7f2ed]/92 shadow-[0_10px_35px_rgba(0,0,0,0.05)] `
-                } p-7 hover:shadow-[0_18px_50px_rgba(0,0,0,0.08)]`}
+                } p-5 sm:p-7 hover:shadow-[0_18px_50px_rgba(0,0,0,0.08)]`}
                 style={{
                   animationDelay: `${idx * 100}ms`,
                 }}

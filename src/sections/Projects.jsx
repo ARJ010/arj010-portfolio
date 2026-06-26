@@ -20,6 +20,7 @@ const projects = [
     short_video: "/projects/frugalmyo.mp4",
 
     certificate: "/certificates/frugalmyo-certificate.webp",
+    orientation: "landscape",
 
     github: "",
 
@@ -61,6 +62,7 @@ const projects = [
     short_video: "/projects/ninapro.mp4",
 
     certificate: "/certificates/ninapro-certificate.webp",
+    orientation: "landscape",
 
     github:
       "https://github.com/ARJ010/ninapro-db1-benchmark-replication",
@@ -103,6 +105,7 @@ const projects = [
     short_video: "/projects/ats.mp4",
 
     certificate: "/certificates/ats-certificate.webp",
+    orientation: "landscape",
 
     github:
       "https://github.com/ARJ010/Attendance_Tracking_System",
@@ -139,6 +142,7 @@ const projects = [
     short_video: "/projects/cms.mp4",
 
     certificate: "/certificates/cms-certificate.webp",
+    orientation: "landscape",
 
     github: "https://github.com/ARJ010/checklist_app",
 
@@ -175,7 +179,7 @@ export const Projects = () => {
   return (
     <section
       id="projects"
-      className="relative overflow-hidden py-32"
+      className="relative overflow-hidden py-16 sm:py-24 lg:py-32"
     >
       {/* ================= BG ================= */}
 
@@ -247,7 +251,6 @@ export const Projects = () => {
                     muted
                     loop
                     playsInline
-                    preload="metadata"
                     className="h-full w-full object-cover transition-transform duration-900 group-hover:scale-[1.04]"
                   />
                 ) : (
@@ -320,18 +323,13 @@ export const Projects = () => {
         {/* ================= CTA ================= */}
         {projects.length > INITIAL_PROJECTS_COUNT && (
           <div className="animate-fade-in animation-delay-500 mt-14 text-center">
-            <div
-              onClick={() => setShowAll(!showAll)}
-              className="inline-block cursor-pointer"
-            >
-              <AnimatedBorderButton>
-                {showAll
-                  ? "Show Less"
-                  : "Explore More Work"}
+            <AnimatedBorderButton onClick={() => setShowAll(!showAll)}>
+              {showAll
+                ? "Show Less"
+                : "Explore More Work"}
 
-                <ArrowUpRight className="h-5 w-5" />
-              </AnimatedBorderButton>
-            </div>
+              <ArrowUpRight className="h-5 w-5" />
+            </AnimatedBorderButton>
           </div>
         )}
       </div>

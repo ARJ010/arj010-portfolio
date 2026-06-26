@@ -39,7 +39,7 @@ export const About = () => {
   return (
     <section
       id="about"
-      className="relative overflow-hidden py-32"
+      className="relative overflow-hidden py-16 sm:py-24 lg:py-32"
     >
       {/* Subtle Pattern Texture */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,58,58,0.9)_1px,transparent_1px)] bg-size-[26px_26px] opacity-[0.1]" />
@@ -53,7 +53,7 @@ export const About = () => {
                 About Me
               </span>
             </div>
-            <h2 className="animate-fade-in animation-delay-100 text-secondary-foreground max-w-[720px] text-[2.3rem] leading-[1.08] font-bold md:text-[3.7rem]">
+            <h2 className="animate-fade-in animation-delay-100 text-secondary-foreground max-w-[720px] text-3xl sm:text-4xl md:text-[3.7rem] leading-[1.08] font-bold">
               Engineering intelligent systems,
               <span className="font-serif font-normal text-slate-700 italic">
                 {" "}
@@ -105,7 +105,7 @@ export const About = () => {
                   animationDelay: `${(idx + 1) * 100}ms`,
                 }}
               >
-                <div className="bg-primary/10 hover:bg-primary/20 mb-4 flex h-12 w-12 items-center justify-center rounded-xl">
+                <div className="bg-primary/10 hover:bg-primary/20 mb-4 flex h-12 w-12 items-center justify-center rounded-xl transition-colors duration-300">
                   <item.icon className="text-primary h-6 w-6" />
                 </div>
 

@@ -29,6 +29,9 @@ export const ProjectModal = ({ project, onClose }) => {
       {/* ================= MODAL ================= */}
       <div
         onClick={(e) => e.stopPropagation()}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="project-modal-title"
         className="animate-in zoom-in-95 relative max-h-[92vh] w-full max-w-6xl overflow-x-hidden overflow-y-auto rounded-4xl border border-[#ffffff40] bg-[#f6f1eb]/96 shadow-[0_25px_60px_rgba(0,0,0,0.12)] backdrop-blur-xl duration-300"
       >
         {/* ================= BG GLOWS ================= */}
@@ -54,6 +57,7 @@ export const ProjectModal = ({ project, onClose }) => {
         {/* ================= CLOSE ================= */}
         <button
           onClick={onClose}
+          aria-label="Close project modal"
           className="sticky top-5 z-50 ml-auto flex h-11 w-11 items-center justify-center rounded-full border border-black/5 bg-white/80 shadow-md backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:shadow-lg"
         >
           <X className="h-5 w-5 text-slate-700" />
@@ -79,7 +83,7 @@ export const ProjectModal = ({ project, onClose }) => {
           <div className="mt-6 gap-7 lg:grid lg:grid-cols-[1fr_auto]">
             {/* LEFT */}
             <div className="max-w-4xl">
-              <h2 className="text-secondary-foreground text-4xl leading-[1.05] font-bold break-words md:text-5xl">
+              <h2 id="project-modal-title" className="text-secondary-foreground text-4xl leading-[1.05] font-bold break-words md:text-5xl">
                 {project.title}
               </h2>
 

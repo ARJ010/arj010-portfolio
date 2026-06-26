@@ -4,7 +4,7 @@ import {
   Award,
 } from "lucide-react";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 const certificates = [
   {
@@ -135,15 +135,15 @@ export const Certificates = () => {
     };
   }, [activeCertificate]);
 
-  const next = () => {
+  const next = useCallback(() => {
     setExpanded(false);
 
     setActiveIdx(
       (prev) => (prev + 1) % certificates.length
     );
-  };
+  }, []);
 
-  const previous = () => {
+  const previous = useCallback(() => {
     setExpanded(false);
 
     setActiveIdx(
@@ -151,7 +151,7 @@ export const Certificates = () => {
         (prev - 1 + certificates.length) %
         certificates.length
     );
-  };
+  }, []);
 
   // Keyboard navigation
   useEffect(() => {
@@ -178,12 +178,12 @@ export const Certificates = () => {
 
     return () =>
       window.removeEventListener("keydown", handleKey);
-  }, []);
+  }, [next, previous]);
 
   return (
     <section
       id="certifications"
-      className="relative overflow-hidden py-32"
+      className="relative overflow-hidden py-16 sm:py-24 lg:py-32"
     >
       {/* Background Glow */}
       <div
@@ -342,6 +342,7 @@ export const Certificates = () => {
             <button
               className="glass hover:bg-primary/10 hover:text-primary rounded-full p-3 transition-all"
               onClick={previous}
+              aria-label="Previous certificate"
             >
               <ChevronLeft />
             </button>
@@ -356,6 +357,8 @@ export const Certificates = () => {
 
                     setActiveIdx(idx);
                   }}
+                  aria-label={`Go to certificate ${idx + 1}`}
+                  aria-current={idx === activeIdx ? "true" : "false"}
                   className={`h-2 rounded-full transition-all duration-300 ${
                     idx === activeIdx
                       ? "bg-primary w-8"
@@ -368,6 +371,7 @@ export const Certificates = () => {
             <button
               onClick={next}
               className="glass hover:bg-primary/10 hover:text-primary rounded-full p-3 transition-all"
+              aria-label="Next certificate"
             >
               <ChevronRight />
             </button>

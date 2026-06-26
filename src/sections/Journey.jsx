@@ -155,7 +155,7 @@ export const Journey = () => {
   return (
     <section
       id="journey"
-      className="relative overflow-hidden py-32"
+      className="relative overflow-hidden py-16 sm:py-24 lg:py-32"
     >
       {/* Background Glow */}
       <div
