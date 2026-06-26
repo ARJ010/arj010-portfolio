@@ -121,7 +121,7 @@ export const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative overflow-x-hidden py-32"
+      className="relative overflow-x-hidden py-16 sm:py-24 lg:py-32"
     >
       {/* BG GLOW */}
       <div className="pointer-events-none absolute top-0 left-0 h-full w-full">
@@ -147,12 +147,12 @@ export const Contact = () => {
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6">
         {/* HEADER */}
-        <div className="mx-auto mb-16 max-w-3xl text-center">
+        <div className="mx-auto mb-10 sm:mb-16 max-w-3xl text-center">
           <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase">
             Get In Touch
           </span>
 
-          <h2 className="text-secondary-foreground mt-4 mb-6 text-4xl font-bold md:text-5xl">
+          <h2 className="text-secondary-foreground mt-4 mb-6 text-3xl sm:text-4xl font-bold md:text-5xl">
             Let’s build
             <span className="font-serif font-normal text-slate-700 italic">
               {" "}
@@ -171,7 +171,7 @@ export const Contact = () => {
         {/* MAIN GRID */}
         <div className="mx-auto grid w-full max-w-6xl min-w-0 gap-8 px-1 lg:grid-cols-2">
           {/* ================= FORM ================= */}
-          <div className="w-full min-w-0 rounded-[2.2rem] border border-[#8b3a3a]/8 bg-[#f7f2ed]/92 p-4 shadow-[0_10px_35px_rgba(0,0,0,0.05)] backdrop-blur-xl sm:p-3 md:p-8">
+          <div className="w-full min-w-0 rounded-[2.2rem] border border-[#8b3a3a]/8 bg-[#f7f2ed]/92 p-5 sm:p-6 md:p-8 shadow-[0_10px_35px_rgba(0,0,0,0.05)] backdrop-blur-xl">
             <form
               className="space-y-5"
               onSubmit={handleSubmit}
@@ -223,7 +223,7 @@ export const Contact = () => {
                       email: e.target.value,
                     })
                   }
-                  className="box-border w-full min-w-0 rounded-2xl border border-black/5 bg-white/70 px-5 py-4 transition-all duration-300 outline-none focus:border-[#8b3a3a]/20 focus:ring-4 focus:ring-[#8b3a3a]/10"
+                  className="box-border w-full min-w-0 rounded-2xl border border-black/5 bg-white/70 px-5 py-4 transition-all duration-300 outline-none hover:border-[#8b3a3a]/10 focus:border-[#8b3a3a]/20 focus:ring-4 focus:ring-[#8b3a3a]/10"
                 />
               </div>
 
@@ -306,18 +306,18 @@ export const Contact = () => {
                     <a
                       key={i}
                       href={item.href}
-                      className="group flex items-center gap-4 rounded-2xl p-2 transition-all duration-300 hover:bg-white/50"
+                      className="group flex items-center gap-4 rounded-2xl p-3 sm:p-4 transition-all duration-300 hover:bg-white/50"
                     >
-                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#8b3a3a]/10 transition-all duration-300 group-hover:scale-105">
+                      <div className="flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-2xl bg-[#8b3a3a]/10 transition-all duration-300 group-hover:scale-105">
                         <item.icon className="h-5 w-5 text-[#8b3a3a]" />
                       </div>
 
-                      <div>
-                        <div className="text-sm text-slate-500">
+                      <div className="min-w-0 flex-1">
+                        <div className="text-xs sm:text-sm text-slate-500">
                           {item.label}
                         </div>
 
-                        <div className="font-medium wrap-break-word text-slate-800">
+                        <div className="font-medium break-words text-slate-800 text-sm sm:text-base">
                           {item.value}
                         </div>
                       </div>
@@ -325,18 +325,18 @@ export const Contact = () => {
                   ) : (
                     <div
                       key={i}
-                      className="flex items-center gap-4 rounded-2xl p-4"
+                      className="flex items-center gap-4 rounded-2xl p-3 sm:p-4"
                     >
-                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#8b3a3a]/10">
+                      <div className="flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-2xl bg-[#8b3a3a]/10">
                         <item.icon className="h-5 w-5 text-[#8b3a3a]" />
                       </div>
 
-                      <div>
-                        <div className="text-sm text-slate-500">
+                      <div className="min-w-0 flex-1">
+                        <div className="text-xs sm:text-sm text-slate-500">
                           {item.label}
                         </div>
 
-                        <div className="font-medium wrap-break-word text-slate-800">
+                        <div className="font-medium break-words text-slate-800 text-sm sm:text-base">
                           {item.value}
                         </div>
                       </div>
@@ -347,7 +347,7 @@ export const Contact = () => {
             </div>
 
             {/* AVAILABILITY */}
-            <div className="rounded-4xl bg-[#8b3a3a] p-3 text-white shadow-[0_10px_35px_rgba(139,58,58,0.25)] md:p-5">
+            <div className="rounded-3xl sm:rounded-4xl bg-[#8b3a3a] p-5 sm:p-6 md:p-8 text-white shadow-[0_10px_35px_rgba(139,58,58,0.25)]">
               <div className="mb-4 flex items-center gap-3">
                 <span className="h-3 w-3 animate-pulse rounded-full bg-green-400" />
 

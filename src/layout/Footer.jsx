@@ -1,5 +1,5 @@
 import { Github, Linkedin, Instagram } from "lucide-react";
-import { useMemo } from "react";
+
 
 const socialLinks = [
   {
@@ -78,13 +78,10 @@ const quotes = [
   },
 ];
 
+const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
-
-  const randomQuote = useMemo(
-    () => quotes[Math.floor(Math.random() * quotes.length)],
-    []
-  );
 
   return (
     <footer className="border-border/50 relative overflow-hidden border-t bg-[#F8F4EE] py-12">

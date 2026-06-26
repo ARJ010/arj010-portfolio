@@ -34,7 +34,7 @@ export const Hero = () => {
         <div className="absolute inset-0 opacity-[0.08]">
           <img
             src="/watercolor-bg.webp"
-            alt="A watercolor image of a garden Background"
+            alt=""
             className="h-full w-full object-cover"
           />
         </div>
@@ -124,7 +124,7 @@ export const Hero = () => {
                 rel="noopener noreferrer"
                 download
               >
-                <AnimatedBorderButton className="h-13 px-7">
+                <AnimatedBorderButton as="span" className="h-13 px-7">
                   <Download className="h-5 w-5" />
                   Resume
                 </AnimatedBorderButton>

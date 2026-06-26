@@ -79,7 +79,7 @@ export const ProjectModal = ({ project, onClose }) => {
           <div className="mt-6 gap-7 lg:grid lg:grid-cols-[1fr_auto]">
             {/* LEFT */}
             <div className="max-w-4xl">
-              <h2 className="text-secondary-foreground text-4xl leading-[1.05] font-bold wrap-break-word md:text-5xl">
+              <h2 className="text-secondary-foreground text-4xl leading-[1.05] font-bold break-words md:text-5xl">
                 {project.title}
               </h2>
 
